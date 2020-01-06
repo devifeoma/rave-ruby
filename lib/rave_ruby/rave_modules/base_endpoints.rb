@@ -18,4 +18,8 @@ module BASE_ENDPOINTS
     FETCH_ENDPOINT = "v2/gpx/transfers"
     REFUND_ENDPOINT = "gpx/merchant/transactions"
     BANKS_ENDPOINT = "flwv3-pug/getpaidx/api/flwpbf-banks.js"
+    TRANSFER_VERIFICATION_ENDPOINT = "flwv3-pug/getpaidx/api/verify"
+    BVN_VERIFICATION = "v2/kyc/bvn"
+    VIRTUAL_CARD_ENDPOINT = "v2/services/virtualcards"
+    SETTLEMENT_ENDPOINT = "v2/merchant/settlements"
 end

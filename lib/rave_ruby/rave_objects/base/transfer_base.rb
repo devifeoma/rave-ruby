@@ -32,6 +32,7 @@ class TransferBase < Base
             response = {"error": true, "data": initiate_response["data"]}
             raise InitiateTransferError, JSON.parse(response.to_json)
         end
+
     end
 
     # method to handle get fee response
@@ -73,6 +74,18 @@ class TransferBase < Base
             return response
         else
             response = {"error" => true, "returned_data" => JSON.parse(fetch_status.body)}
+            raise InitiateTransferError, response
+        end
+    end
+
+    def handle_transfer_recipient(response)
+        transfer_create_recipient = response
+        
+        if transfer_create_recipient.code == 200
+            response = {"error" => false, "returned_data" => JSON.parse(transfer_create_recipient.body)}
+            return response
+        else
+            response = {"error" => true, "returned_data" => JSON.parse(transfer_create_recipient.body)}
             raise InitiateTransferError, response
         end
     end

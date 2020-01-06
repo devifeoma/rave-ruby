@@ -151,4 +151,9 @@ class ChargeBase < Base
       return JSON.parse(res.to_json)
     end
   end
+
+  def handle_bank_transfer_charge(response)
+    bank_transfer_charge = response
+    return response
+  end
 end 

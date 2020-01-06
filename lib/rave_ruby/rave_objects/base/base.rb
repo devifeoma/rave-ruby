@@ -103,4 +103,47 @@ class Base
         # raise InitiateTransferError, response
     end
   end
+
+  # method to handle bvn verification
+  def handle_bvn_verification(response)
+    bvn_verification = response
+
+      if bvn_verification.code == 200
+          response = {"error" => false, "data" => JSON.parse(bvn_verification.body)}
+          return response
+      else
+          response = {"error" => true, "data" => JSON.parse(bvn_verification.body)}
+          return response
+          # raise bvnVerificationError, response
+      end
+  end
+
+    # method to handle virtual_card
+    def handle_virtual_card(response)
+      virtual_card = response
+  
+        if virtual_card.code == 200
+            response = {"error" => false, "data" => JSON.parse(virtual_card.body)}
+            return response
+        else
+            response = {"error" => true, "data" => JSON.parse(virtual_card.body)}
+            return response
+            # raise virtualCardError, response
+        end
+    end
+
+     # method to handle settlement
+     def handle_settlement(response)
+      settlement = response
+  
+        if settlement.code == 200
+            response = {"error" => false, "data" => JSON.parse(virtual_card.body)}
+            return response
+        else
+            response = {"error" => true, "data" => JSON.parse(settlement.body)}
+            return response
+            # raise virtualCardError, response
+        end
+    end
+
 end

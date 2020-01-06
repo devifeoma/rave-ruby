@@ -15,6 +15,12 @@ require_relative "rave_ruby/rave_objects/ussd"
 require_relative "rave_ruby/rave_objects/preauth"
 require_relative "rave_ruby/rave_objects/sub_account"
 require_relative 'rave_ruby/error'
+require_relative "rave_ruby/rave_objects/transfer_recipient"
+require_relative "rave_ruby/rave_objects/bvn_verification"
+require_relative "rave_ruby/rave_objects/virtual_card"
+require_relative "rave_ruby/rave_objects/bank_transfer"
+require_relative "rave_ruby/rave_objects/settlement"
+
 
 
   class RaveRuby
